@@ -1,0 +1,64 @@
+preprocessor directive - instruction that is processed by the preprocessor before the actual compilation of the program begins.
+
+
+| Compiler                                               | Interpreter                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ |
+| Translates the **entire program at once**              | Translates and executes **one line at a time**         |
+| Generates an **executable file**                       | Does **not usually create a separate executable file** |
+| Errors are shown **after compiling the whole program** | Errors are shown **line by line during execution**     |
+| Execution is generally **faster**                      | Execution is generally **slower**                      |
+| Example: **GCC**                                       | Example: **Python Interpreter**                        |
+
+
+C++ is different from C in several ways:
+
+C is a procedural language, while C++ is an object-oriented language (it also supports procedural programming).
+C++ supports classes and objects, while C does not.
+C++ provides inheritance, polymorphism, and encapsulation, while C does not support these object-oriented features.
+C++ supports function overloading, while C does not.
+C++ has features like constructors and destructors, which are not available in C.
+C++ generally offers better support for code reusability and larger projects.
+
+
+If you do not use using namespace std;, you can still use cout and cin by writing std:: before them because cout and cin belong to the std (standard) namespace.
+#include <iostream>
+
+int main() {
+    std::cout << "Enter a number: ";
+
+    int x;
+    std::cin >> x;
+
+    std::cout << "You entered: " << x;
+
+    return 0;
+}
+
+
+Data Types in C++
+Built-In (Primitive)- int, char, float, double, void
+Derived - arrays, pointers, refrences
+User-Defined - structures, unions, classes, enumerations.
+
+
+| Quotes                       |                          Used for | Example   |
+| ---------------------------- | --------------------------------: | --------- |
+| Single quotes `' '`          |       A single character (`char`) | `'A'`     |
+| Double quotes `" "`          | A string (sequence of characters) | `"Anmol"` |
+
+
+
+
+The reason is that cout uses a default display precision, so it may show only a limited number of digits. The value inside the variable is usually still stored with more precision.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    double x = 59.6987654321;
+    cout << fixed << setprecision(10) << x;
+
+    return 0;
+}
+
+
+unsigned - keyword is used to increase the limit of datatype
