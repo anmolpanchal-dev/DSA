@@ -1,7 +1,1 @@
-    // cout << a << endl;
-    // cout << ++a << endl;
-    // cout << a++ << endl;
-    // cout << a << endl;
-    // cout << --a << endl;
-    // cout << a-- << endl;
-    // cout << a << endl;
+(int)i
