@@ -1,1 +1,1 @@
-cout<<arr[i];
+ getline(inp, line)
