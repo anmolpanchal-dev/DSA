@@ -155,18 +155,19 @@ void printN12(int n){
     }
 }
 void printN13(int n){
-    int num = 1;
     for(int i = 1; i <= n; i++){
-       for(int j = 0; j < i; j++){
-            cout<<num++<<" ";
-       }
+        char c = 'A';
+        for(int j = 0; j< i; j++){
+            cout<<c;
+            c++;
+        }
         cout<<endl;
     }
 }
 
 int main(){
     // int n ;
-    char n;
+    int n;
     cout<<"Enter a Number: ";
     cin>>n;
     printN13(n);
