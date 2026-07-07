@@ -4,6 +4,9 @@ using namespace std;
 vector<vector<int>> Something(int arr[],int arrSize){
     vector<vector<int>> v1;
     for(int i = 0; i < arrSize-2; i++){
+        if(i>0 && arr[i] == arr[i-1]){
+            continue;
+        }
         int left = i+1;
         int right = arrSize-1;
         while(left<right){
@@ -18,7 +21,7 @@ vector<vector<int>> Something(int arr[],int arrSize){
                 while(arr[right]==arr[right+1]){
                     right--;
                 }
-            }else if(sum < 0){
+            }else if(sum < -arr[i]){
                 left++;
             }else{
                 right--;
