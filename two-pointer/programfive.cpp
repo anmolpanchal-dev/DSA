@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 vector<vector<int>> Something(vector<int> &v, int target){
-    sort(v.begin(), v.end())
+    sort(v.begin(), v.end());
     vector<vector<int>> ans;
     for(int i = 0; i < v.size()-2; i++){
         if(i>0 && v[i] == v[i-1]){
@@ -22,9 +21,7 @@ vector<vector<int>> Something(vector<int> &v, int target){
                 }
             }else{
                 right--;
-
             }
-
         }
     }
     return ans;
@@ -32,7 +29,7 @@ vector<vector<int>> Something(vector<int> &v, int target){
 
 int main(){
     vector<int> v = {-1, 0, 2, 1, -4};
-    int target = 2;
+    int target = 3;
     vector<vector<int>> result = Something(v, target);
     for(auto triplet : result){
         cout << "[" << triplet[0] << ", " << triplet[1] << ", " << triplet[2] << "]\n";    

@@ -1,20 +1,3 @@
-// #include <bits/stdc++.h>
-// using namespace std;
-// int main(){
-//     
-//     int sum = arr[0]+arr[1]+arr[2]; 
-//     int maxSum = sum;
-//     for(int i = 3; i < sizeof(arr)/sizeof(arr[0]); i++){
-//         sum = sum + arr[i] - arr[i-3];
-//         maxSum = max(maxSum, sum);
-//     }
-//     cout<<maxSum;
-// }
-
-
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
