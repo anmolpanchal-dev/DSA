@@ -20,7 +20,7 @@ int Something(vector<int> &v,int target){
 }
 
 int main(){
-    vector<int> v = {1,2,3,4,5,6,7,7,6,5,0,2,4,7,10,4,5,8,3,7,5,6};
+    vector<int> v = {1,2,3,4,5,6,7,7,6,5,0,2,4,7,10,4,5,8,3,7,6};
     cout<<Something(v,55);
 
 }
