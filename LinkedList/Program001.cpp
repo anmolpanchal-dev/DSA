@@ -35,6 +35,40 @@ void printList(Node* head){
     }
     cout<<  "NULL"<<endl<<endl;
 }
+
+Node* insertAtPosition(Node* head, int pos, int val){
+    if (pos < 0)
+    {
+        return head;
+    }
+    Node* newNode = new Node(val);
+    if(head == nullptr){
+        if(pos == 0){
+            return newNode;
+        }
+        delete newNode;
+        return head;
+    }
+    if (pos == 0){
+        newNode->next = head;
+        head = newNode;
+        return head;
+    }
+    int count = 0;
+    Node* temp = head;
+    while(temp != nullptr && count < pos - 1){
+        temp = temp->next;
+        count++;
+    }
+    if (temp == nullptr){
+        delete newNode;
+        return head;
+    }
+    newNode->next = temp->next;
+    temp->next = newNode; 
+    return head;
+}
+
 int main(){
     Node* first = new Node(134);
     Node* head = first;
@@ -49,7 +83,10 @@ int main(){
     head = insertAtEnd(head, 300);
     head = insertAtEnd(head, 400);
     printList(head);
-
+    cout<<"------------Position Insertion----------------"<<endl<<endl;
+    insertAtPosition(head,3,555);
+    printList(head);
+    
 
     return 0;
 }
