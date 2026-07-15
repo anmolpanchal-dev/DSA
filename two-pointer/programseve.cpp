@@ -47,6 +47,32 @@ vector<char> reverseString001(vector<char> &v){
     }
     return v;
 }
+
+vector<int> removeDuplictes(vector<int> &v){
+    int left = 0;
+    int right = 1;
+    while(right < v.size()){
+        if(v[right] == v[left]){
+            v.erase(v.begin()+right);
+        }else{
+            right++;
+            left++;
+        }
+    }
+    return v;
+}
+
+vector<int> removeDuplictes001(vector<int> &v){
+    int left = 0;
+    for(int right = 1; right < v.size(); right++){
+        if(v[right]!=v[left]){
+            left++;
+            nums[left] = v[right];
+        }
+    }
+    return left+1;
+}
+
 int main(){
 
     // cout<<Palindrome("maadaam");
@@ -63,6 +89,11 @@ int main(){
     //     cout<<x<<" ";
     // }
 
-    
+    vector<int> v = {1,1,2,2,3,3,3,3,3,3,3,3,4};
+    removeDuplictes(v);
+    for(auto x: v){
+        cout<<x<<" ";
+    }
+
 
 }
