@@ -62,15 +62,37 @@ vector<int> removeDuplictes(vector<int> &v){
     return v;
 }
 
-vector<int> removeDuplictes001(vector<int> &v){
+int removeDuplictes001(vector<int> &v){
     int left = 0;
     for(int right = 1; right < v.size(); right++){
         if(v[right]!=v[left]){
             left++;
-            nums[left] = v[right];
+            v[left] = v[right];
         }
     }
     return left+1;
+}
+
+vector<int> mergeVector(vector<int> &a, int num1, vector<int> &b, int num2){
+    int i = num1-1;
+    int j = num2-1;
+    int k = a.size()-1;
+    while(i >= 0 && j >= 0){
+        if(a[i]>b[j]){
+            a[k] = a[i];
+            i--;
+        }else{
+            a[k] = b[j];
+            j--;
+        }
+        k--;
+    }
+    while (j >= 0) {
+            a[k] = b[j];
+            j--;
+            k--;
+        }
+        return a;
 }
 
 int main(){
@@ -89,11 +111,16 @@ int main(){
     //     cout<<x<<" ";
     // }
 
-    vector<int> v = {1,1,2,2,3,3,3,3,3,3,3,3,4};
-    removeDuplictes(v);
-    for(auto x: v){
+    // vector<int> v = {1,1,2,2,3,3,3,3,3,3,3,3,4};
+    // removeDuplictes(v);
+    // for(auto x: v){
+    //     cout<<x<<" ";
+    // }
+
+    vector<int> v1 = {1,3,5,0,0,0};
+    vector<int> v2 = {2,4,6};
+    mergeVector(v1,3,v2,3);
+    for(auto x: v1){
         cout<<x<<" ";
     }
-
-
 }
