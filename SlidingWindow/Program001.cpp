@@ -11,9 +11,9 @@ int MaxSum(int arr[],int arrSize,int n){
     }
     int maxSum = sum;
     for(int high = n; high < arrSize; high++) {
-    sum = sum + arr[high] - arr[high - n];
-    maxSum = max(maxSum, sum);
-}
+        sum = sum + arr[high] - arr[high - n];
+        maxSum = max(maxSum, sum);
+    }
     return maxSum;
 }
 
