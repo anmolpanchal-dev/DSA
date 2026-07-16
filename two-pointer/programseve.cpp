@@ -94,6 +94,23 @@ vector<int> mergeVector(vector<int> &a, int num1, vector<int> &b, int num2){
         }
         return a;
 }
+int slidingWindow(vector<int> &v, int k){
+    int low = 0;
+    int high = k-1;
+    int sum = 0;
+    int maxSum = sum;
+    for(int i = low; i <= high; i++){
+        sum += v[i];
+    }
+    while(high < v.size()){
+        maxSum = max(sum, maxSum);
+        if(high < v.size()) high++ ;
+        sum = sum + v[high] - v[low];
+        low++;
+    }
+    return maxSum;
+}
+
 
 int main(){
 
@@ -117,10 +134,14 @@ int main(){
     //     cout<<x<<" ";
     // }
 
-    vector<int> v1 = {1,3,5,0,0,0};
-    vector<int> v2 = {2,4,6};
-    mergeVector(v1,3,v2,3);
-    for(auto x: v1){
-        cout<<x<<" ";
-    }
+    // vector<int> v1 = {1,3,5,0,0,0};
+    // vector<int> v2 = {2,4,6};
+    // mergeVector(v1,3,v2,3);
+    // for(auto x: v1){
+    //     cout<<x<<" ";
+    // }
+
+    vector<int> v = {1,2,3,4,5,6,7,8,9,10};
+    cout<<slidingWindow(v,3);
+    return 0;
 }
