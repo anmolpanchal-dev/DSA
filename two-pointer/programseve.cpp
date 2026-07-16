@@ -111,6 +111,23 @@ int slidingWindow(vector<int> &v, int k){
     return maxSum;
 }
 
+int maxSumTarget(vector<int> &v, int target){
+    int low = 0;
+    int high = 0;
+    int sum = 0;
+    int res = INT_MAX;
+    while(high < v.size()){
+        sum += v[high];
+        while(sum>=target){
+            res = min(res, high-low+1);
+            sum -= v[low];
+            low++;
+        }
+        high++;
+    }
+    return (res ==  INT_MAX) ? 0 : res;
+} 
+
 
 int main(){
 
@@ -142,6 +159,6 @@ int main(){
     // }
 
     vector<int> v = {1,2,3,4,5,6,7,8,9,10};
-    cout<<slidingWindow(v,3);
+    cout<<maxSumTarget(v,12);
     return 0;
 }
