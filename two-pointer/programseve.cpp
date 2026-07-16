@@ -94,6 +94,7 @@ vector<int> mergeVector(vector<int> &a, int num1, vector<int> &b, int num2){
         }
         return a;
 }
+
 int slidingWindow(vector<int> &v, int k){
     int low = 0;
     int high = k-1;
@@ -128,8 +129,31 @@ int maxSumTarget(vector<int> &v, int target){
     return (res ==  INT_MAX) ? 0 : res;
 } 
 
+int longestSubstring(string &str, int len, int k){
+    int low = 0; 
+    int high = 0; 
+    int maxLength = -1;
+    unordered_map<char, int> mp;
+    while(high < len){
+        mp[str[high]]++;
+        while(mp.size() > k){
+            mp[str[low]]--;
+            if(mp[str[low]] == 0){
+                mp.erase(str[low]);
+            }
+            low++;
+        }
+        if(mp.size() == k){
+            maxLength = max(maxLength, high-low+1);
+        }
+        high++;
+    }
+    return maxLength;
+}
 
 int main(){
+    string str = "aaannnnnnnnnnbbbn";
+    cout<<longestSubstring(str, str.length(), 3);
 
     // cout<<Palindrome("maadaam");
 
@@ -158,7 +182,7 @@ int main(){
     //     cout<<x<<" ";
     // }
 
-    vector<int> v = {1,2,3,4,5,6,7,8,9,10};
-    cout<<maxSumTarget(v,12);
+    // vector<int> v = {1,2,3,4,5,6,7,8,9,10};
+    // cout<<maxSumTarget(v,12);
     return 0;
 }
