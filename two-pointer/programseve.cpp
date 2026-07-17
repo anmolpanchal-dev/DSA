@@ -151,9 +151,31 @@ int longestSubstring(string &str, int len, int k){
     return maxLength;
 }
 
+int fruitsIntoBasket(vector<int> nums ){
+    int low = 0;
+    int high = 0;
+    int maxfruit = INT_MIN;
+    unordered_map<int,int> mp;
+    while(high < nums.size()){
+        mp[nums[high]]++;
+        while(mp.size()>2){
+            mp[nums[low]]--;
+            if(mp[nums[low]] == 0){
+                mp.erase(nums[low]);
+            }
+            low++;
+        }
+        if(mp.size() == 2){
+            maxfruit = max(maxfruit, high-low+1);
+        }
+        high++;
+
+    }
+    return maxfruit;
+}
 int main(){
-    string str = "aaannnnnnnnnnbbbn";
-    cout<<longestSubstring(str, str.length(), 3);
+    vector<int> v = {1,2,3,2,1,2,2,1,1,2,2,1,3,3,4,3,4,3,4,3};
+    cout<<fruitsIntoBasket(v);
 
     // cout<<Palindrome("maadaam");
 
