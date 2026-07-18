@@ -31,7 +31,7 @@ int longestSubstring(string str, int k, int len){
     return maxLength;
 }
 int main(){
-     string str = "aaaaaaaaaaaaaaaaaaaa";
+    string str = "aaaaaaaaaaaaaaaaaaaa";
 
     cout << longestSubstring(str,1,str.length());
 

@@ -173,9 +173,33 @@ int fruitsIntoBasket(vector<int> nums ){
     }
     return maxfruit;
 }
+
+int longestSubstringNoDuplicate(string &str, int len){
+    int low= 0;
+    int high = 0;
+    int maxLength = INT_MIN;
+    unordered_map<char,int> mp;
+    while(high < len){
+        mp[str[high]]++;
+        while(mp.size() < (high-low+1)){
+            mp[str[low]]--;
+            if(mp[str[low]] == 0){
+                mp.erase(str[low]);
+            }
+            low++;
+        }
+        if(mp.size() == (high-low+1)){
+            maxLength = max(maxLength, high-low+1);
+        }
+        high++;
+    }
+    return maxLength;
+
+}
+
 int main(){
-    vector<int> v = {1,2,3,2,1,2,2,1,1,2,2,1,3,3,4,3,4,3,4,3};
-    cout<<fruitsIntoBasket(v);
+    string str = "aabbcadfgh";
+    cout<<longestSubstringNoDuplicate(str, 10);
 
     // cout<<Palindrome("maadaam");
 
