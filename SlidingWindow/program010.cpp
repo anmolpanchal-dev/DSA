@@ -13,7 +13,7 @@ string something(string s, string t){
     int formed = 0;
     int minLength = INT_MAX;
     int start = 0;
-    int required = t.size();
+    int required = need.size();
 
     for(int high = 0; high < s.size(); high++){
         char ch = s[high];
@@ -27,7 +27,7 @@ string something(string s, string t){
                 start = low;
             }
             window[s[low]]--;
-            if(need.count(s[low]) && need[s[low]] != window[s[low]]){
+            if(need.count(s[low]) && need[s[low]] > window[s[low]]){
                 formed--;
             }
             low++;
@@ -39,7 +39,7 @@ string something(string s, string t){
 
 int main() {
     string s = "ABABSBDBABSBSBSBAGSBJDBABGDB";
-    string t = "BG";
+    string t = "AA";
     cout<<something(s,t);
     return 0;
 }

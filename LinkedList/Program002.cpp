@@ -93,6 +93,19 @@ Node* deleteAtPos(Node* head, int pos) {
     return head;
 }
 
+Node* reverseLL(Node* head){
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* next = nullptr;
+    while(curr != nullptr){
+        next = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
 void print(Node* head) {
     while (head != nullptr) {
         cout << head->data << " -> ";

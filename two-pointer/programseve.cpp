@@ -197,9 +197,71 @@ int longestSubstringNoDuplicate(string &str, int len){
 
 }
 
+int characterReplacement(string s, int k) {
+        vector<int> freq(26, 0);
+
+        int left = 0;
+        int maxFreq = 0;
+        int maxLen = 0;
+
+        for (int right = 0; right < s.size(); right++) {
+
+            freq[s[right] - 'A']++;
+
+            maxFreq = max(maxFreq, freq[s[right] - 'A']);
+
+            while ((right - left + 1) - maxFreq > k) {
+                freq[s[left] - 'A']--;
+                left++;
+            }
+
+            maxLen = max(maxLen, right - left + 1);
+        }
+
+        return maxLen;
+}
+
+int longestSubstrit(string &str, str len){
+    int high = 0;
+    int low = 0;
+    unordered_map<char, int> mp;
+    int maxLen = INT_MIN;
+    for(high = 0; h < len; high++){
+        mp[str[high]]++;
+        while(mp.size() < high-low+1){
+            mp[str[low]]--;
+            if(mp[str[low]] == 0){
+                mp.erase(str[low]);
+            }
+            low++;
+        }
+        if(mp.size() == high-low+1){
+            maxLen = max(maxLen, high-low+1);
+        }
+        high++;
+    }
+}
+
+int longestSubstringwithReplacement(string &str, int k){
+    int low = 0;
+    int high = 0;
+    int maxFreq = 0;
+    vector<int> v[26,0];
+    for(high = 0; high < str.size(); high++){
+        v[str[high] - 'A']++;
+        maxFreq = max[maxFreq,v[str[high]-'A']];
+        while((high-low+1)-maxFreq > k){
+            v[str[low]-'A']--;
+            low++;
+        }
+        ans = max(ans, high-low+1);
+    }
+}
+
+
 int main(){
-    string str = "aabbcadfgh";
-    cout<<longestSubstringNoDuplicate(str, 10);
+    string str = "abababa";
+    cout<<characterReplacement(str, 1);
 
     // cout<<Palindrome("maadaam");
 
