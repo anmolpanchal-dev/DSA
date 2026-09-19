@@ -1,0 +1,1 @@
+eversed(nums)
