@@ -1,1 +1,1 @@
-eversed(nums)
+target =
