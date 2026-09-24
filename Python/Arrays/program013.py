@@ -23,4 +23,14 @@ def XORmissing(nums, n):
 nums = [1,2,3,4,5,7,8,9,10]
 print(XORmissing(nums,10))
 
-    
+
+
+def missingNUmber(nums, n):
+    XOR = 0
+    for x in range(1, n+1):
+        XOR ^= x
+    for x in nums:
+        XOR ^= x
+    return XOR
+
+print(missingNUmber(nums, 10))
