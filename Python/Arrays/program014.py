@@ -1,3 +1,5 @@
+# Maximum COnsecutive number
+
 def maxCobsecutiveOnes(nums):
     maxCount = 0
     count = 0
