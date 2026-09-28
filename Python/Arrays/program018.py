@@ -34,10 +34,10 @@ nums = [1,1,1,2,1,2,1,2,2,1,2,0,0,0,0,2,2,1,2,2,1,0,0,0]
 print(betterApproach(nums))
 
 
-def optimalApproach(nums):
-    left = 0
-    right = len(nums)-1
-    while left < right:
-        if nums[left] == 0:
+# def optimalApproach(nums):
+#     left = 0
+#     right = len(nums)-1
+#     while left < right:
+#         if nums[left] == 0:
             
-    return nums
+#     return nums
