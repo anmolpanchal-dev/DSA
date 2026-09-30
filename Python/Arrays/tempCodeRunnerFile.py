@@ -1,21 +1,4 @@
-# Square of sorted array
-
-# # 1. All element are sorted and positive
-# # 2. All number are negative
-# def square(nums):
-#     for i in range(len(nums)):
-#         nums[i] = nums[i] * nums[i]
-#     return nums
-
-# nums = [1,2,3,4,5,6,7,8]
-# print(square(nums))
-
-
-# # 3. Both negative and positive are mix
-
-
-# nums2 = [-5,-3,-2,-1,2,4,6,7,8,9,10]
-# def Square(nums):
+def Square(nums):
 #     left = 0
 #     res = []
 #     for i in range(len(nums)):
@@ -44,7 +27,3 @@
 #     return res
 
 # print(Square(nums2))
-
-
-            
-    
